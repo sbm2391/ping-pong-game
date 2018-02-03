@@ -10,10 +10,14 @@ function Ball (canvas,posX,posY,height,width,color){
 }
 
 Ball.prototype.drawBall = function (){
+    this.ctx.beginPath();
     this.ctx.arc(this.posX,this.posY,this.radius,0,2*Math.PI)
     this.ctx.fillStyle = this.color;
+    this.ctx.closePath();
     this.ctx.fill()
 }
+
+
 
 Ball.prototype.updateBall = function (){
     if (this.direction == "up-right") {
@@ -40,6 +44,6 @@ Ball.prototype.clearBall = function (){
 }
 
 Ball.prototype.checkCollision = function (){
-    
+ 
 }
 
